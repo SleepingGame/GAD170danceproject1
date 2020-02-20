@@ -14,6 +14,21 @@ public static class StatsGenerator
 {
     public static void InitialStats(Stats stats)
     {
+
+        stats.level = 1;
+        stats.xp = 0;
+
+
+
+        int totalPoints = 10;
+
+        stats.rhythm = Random.Range(1, totalPoints);
+        totalPoints -= stats.rhythm;
+
+        stats.style = Random.Range(1, totalPoints);
+        totalPoints -= stats.style;
+
+        stats.luck = totalPoints;
     }
 
     public static void AssignUnusedPoints(Stats stats, int points)

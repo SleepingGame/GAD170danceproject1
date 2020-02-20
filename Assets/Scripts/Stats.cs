@@ -22,4 +22,13 @@ public class Stats : MonoBehaviour
         //assign initial stats
         StatsGenerator.InitialStats(this);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.B))
+        {
+            Debug.Log("xp is " + xp);
+            Debug.Log("lvl is " + level);
+        }
+    }
 }

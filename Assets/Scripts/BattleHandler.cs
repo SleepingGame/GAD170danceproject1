@@ -13,14 +13,20 @@ using UnityEngine;
 /// </summary>
 public static class BattleHandler
 {
-    public static void Battle(BattleEventData data)
+    public static void Battle(BattleEventData data /* IN HERE YOU ADDED SHIT THAT YOU SHOULD NOT HAVE ADDED THAT IS WHY THE ERROR KEPT ON COMING UP i am sorry ( its ok XDDD */)
     {
         //This needs to be replaced with some actual battle logic, at present 
         // we just award the maximum possible win to the player
-        float outcome = 1;
+
+
+
+
+        float outcome = Random.Range(-1.0f, (data.player.luck * Random.Range(-1, data.player.luck)) + (1 / (data.player.rhythm * data.player.style + 1)) + 1);
 
         var results = new BattleResultEventData(data.player, data.npc, outcome);
 
         GameEvents.FinishedBattle(results);
+        Debug.Log(outcome);
     }
 }
+
